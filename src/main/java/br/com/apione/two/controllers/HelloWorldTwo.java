@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping(value = "/apitwo")
+@RequestMapping(value = "/two")
 public class HelloWorldTwo {
 	
 	@Autowired
@@ -23,7 +23,7 @@ public class HelloWorldTwo {
 	
 	@RequestMapping(value = "/hello2", method = RequestMethod.GET)
 	public ResponseEntity<String> findAll2() {
-		String res = restTemplate.getForObject("http://apione-service/hello/", String.class);
+		String res = restTemplate.getForObject("http://apione-service/apione/hello/", String.class);
 		return ResponseEntity.ok().body(res);
 		
 	}
